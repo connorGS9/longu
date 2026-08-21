@@ -22,7 +22,7 @@ public class Longu {
     }
   }
 
-  // start longu from the command line and give it a path to a file, it reads the file and executes it
+  // Start longu from the command line and give it a path to a file, it reads the file and executes it
   public static void runFile(String path) throws IOException { 
     byte[] bytes = Files.readAllBytes(Paths.get(path));
     run(new String(bytes, Charset.defaultCharset()));
@@ -31,14 +31,15 @@ public class Longu {
 
   private static void run(String source) {
     Scanner scanner = new Scanner(source);
-    List<Tokens> tokens = scanner.scanTokens();
-
-    //Print for now
+    List<Token> tokens = scanner.scanTokens();
+ 
+    // Print for now
     for (Token token : tokens) {
-      System.println.out(token + "| ");
+      System.out.println(token + "| ");
     }
   }
-  //Fire up longu without any arguments, and it drops you into a prompt (REPL) where you can enter and execute code one line at a time.
+
+  // Fire up longu without any arguments, and it drops you into a prompt (REPL) where you can enter and execute code one line at a time.
   public static void runPrompt() throws IOException {
     InputStreamReader input = new InputStreamReader(System.in);
     BufferedReader reader = new BufferedReader(input);
