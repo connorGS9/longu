@@ -1,0 +1,20 @@
+
+# Compiled output
+build/
+bin/
+out/
+*.class
+
+# VS Code
+.vscode/
+.history/
+
+# Java tooling (in case you add Maven/Gradle later)
+target/
+.gradle/
+
+# OS junk
+.DS_Store
+Thumbs.db
+*.swp
+*~
