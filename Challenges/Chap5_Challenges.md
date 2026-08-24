@@ -55,7 +55,7 @@ In functional languages it is the opposite adding new operations is easy since w
 We saw how the visitor pattern solved adding new operations for OOP, but to attempt to solve adding new types to a functional language is a different challenge. In Haskell this is solved with a type class; in Scheme it is a record (or dictionary) of functions. The idea is that we create an interface listingthe operations, so if we need to add a new type, we just add an instance defining the behavior for each operation for that type.
 
 In Haskell-ish code: 
-'''
+```Haskell
 class Expr a where
   interpret :: a -> Value
   printExpr :: a -> String
@@ -66,7 +66,7 @@ instance Expr Binary where
   interpret b = ...
   printExpr b = ...
   toRpn     b = ...
-'''
+```
 
 ## Question 3
 In reverse Polish notation (RPN), the operands to an arithmetic operator are both placed before the operator, so 1 + 2 becomes 1 2 +. Evaluation proceeds from left to right. Numbers are pushed onto an implicit stack. An arithmetic operator pops the top two numbers, performs the operation, and pushes the result. Thus, this:
